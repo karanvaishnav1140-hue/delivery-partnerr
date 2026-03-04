@@ -1,0 +1,136 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rickshaw Delivery Service Khopoli</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#0b1a33;
+color:white;
+text-align:center;
+}
+
+.header{
+background:#c40000;
+padding:30px;
+}
+
+.header h1{
+margin:0;
+font-size:32px;
+color:gold;
+}
+
+.banner{
+padding:20px;
+}
+
+.banner img{
+width:90%;
+max-width:500px;
+border-radius:15px;
+}
+
+.order{
+background:white;
+color:black;
+margin:20px;
+padding:20px;
+border-radius:15px;
+}
+
+input,textarea{
+width:90%;
+padding:12px;
+margin:8px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:15px;
+font-size:18px;
+border-radius:10px;
+width:90%;
+}
+
+.footer{
+margin-top:30px;
+padding:20px;
+background:#111;
+}
+
+</style>
+
+<script>
+
+function sendOrder(){
+
+let name=document.getElementById("name").value
+let phone=document.getElementById("phone").value
+let pickup=document.getElementById("pickup").value
+let delivery=document.getElementById("delivery").value
+
+let message=`New Delivery Order%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Pickup: ${pickup}%0A
+Delivery: ${delivery}`
+
+window.open("https://wa.me/918806143563?text="+message)
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>Rickshaw Delivery Service</h1>
+<p>Now Available in Khopoli</p>
+</div>
+
+<div class="banner">
+<img src="poster.jpg">
+</div>
+
+<div class="order">
+
+<h2>Book Delivery</h2>
+
+<input id="name" placeholder="Your Name">
+
+<input id="phone" placeholder="Mobile Number">
+
+<input id="pickup" placeholder="Pickup Location">
+
+<input id="delivery" placeholder="Delivery Location">
+
+<button onclick="sendOrder()">Order on WhatsApp</button>
+
+</div>
+
+<div class="footer">
+
+<h2>Quick Delivery • Low Cost • Trusted</h2>
+
+<p>Call / WhatsApp</p>
+
+<h1>88061 43563</h1>
+
+</div>
+
+</body>
+</html>
+```
