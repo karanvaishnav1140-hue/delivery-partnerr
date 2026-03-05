@@ -1,136 +1,126 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rickshaw Delivery Service Khopoli</title>
+
+<title>Auto Delivery Booking</title>
 
 <style>
 
 body{
 font-family:Arial;
+background:linear-gradient(135deg,#0f172a,#020617);
 margin:0;
-background:#0b1a33;
+padding:0;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 color:white;
-text-align:center;
 }
 
-.header{
-background:#c40000;
-padding:30px;
-}
-
-.header h1{
-margin:0;
-font-size:32px;
-color:gold;
-}
-
-.banner{
-padding:20px;
-}
-
-.banner img{
-width:90%;
-max-width:500px;
-border-radius:15px;
-}
-
-.order{
+.container{
 background:white;
 color:black;
-margin:20px;
-padding:20px;
+padding:30px;
 border-radius:15px;
+width:90%;
+max-width:420px;
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
 }
 
 input,textarea{
-width:90%;
+width:100%;
 padding:12px;
-margin:8px;
+margin:8px 0;
 border-radius:8px;
 border:1px solid #ccc;
+font-size:15px;
 }
 
 button{
+width:100%;
+padding:14px;
 background:#25D366;
 color:white;
 border:none;
-padding:15px;
-font-size:18px;
 border-radius:10px;
-width:90%;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1ebc57;
 }
 
 .footer{
-margin-top:30px;
-padding:20px;
-background:#111;
+text-align:center;
+margin-top:20px;
+font-size:14px;
+color:#555;
 }
 
 </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🚚 Book Delivery</h2>
+
+<input id="name" type="text" placeholder="Customer Name">
+
+<input id="phone" type="tel" placeholder="Phone Number">
+
+<input id="goods" type="text" placeholder="What Goods / Parcel">
+
+<input id="pickup" type="text" placeholder="Pickup Location">
+
+<input id="drop" type="text" placeholder="Drop Location">
+
+<textarea id="note" placeholder="Extra Message (optional)"></textarea>
+
+<button onclick="sendWhatsApp()">Order on WhatsApp</button>
+
+<div class="footer">
+Quick Delivery • Low Cost • Trusted
+</div>
+
+</div>
 
 <script>
 
-function sendOrder(){
+function sendWhatsApp(){
 
-let name=document.getElementById("name").value
-let phone=document.getElementById("phone").value
-let pickup=document.getElementById("pickup").value
-let delivery=document.getElementById("delivery").value
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var goods=document.getElementById("goods").value;
+var pickup=document.getElementById("pickup").value;
+var drop=document.getElementById("drop").value;
+var note=document.getElementById("note").value;
 
-let message=`New Delivery Order%0A
-Name: ${name}%0A
-Phone: ${phone}%0A
-Pickup: ${pickup}%0A
-Delivery: ${delivery}`
+var message="🚚 *New Delivery Order* %0A%0A"
++"👤 Name: "+name+"%0A"
++"📞 Phone: "+phone+"%0A"
++"📦 Goods: "+goods+"%0A"
++"📍 Pickup: "+pickup+"%0A"
++"🏁 Drop: "+drop+"%0A"
++"📝 Note: "+note;
 
-window.open("https://wa.me/918806143563?text="+message)
+var whatsapp="https://wa.me/918857091140?text="+message;
+
+window.open(whatsapp,"_blank");
 
 }
 
 </script>
 
-</head>
-
-<body>
-
-<div class="header">
-<h1>Rickshaw Delivery Service</h1>
-<p>Now Available in Khopoli</p>
-</div>
-
-<div class="banner">
-<img src="poster.jpg">
-</div>
-
-<div class="order">
-
-<h2>Book Delivery</h2>
-
-<input id="name" placeholder="Your Name">
-
-<input id="phone" placeholder="Mobile Number">
-
-<input id="pickup" placeholder="Pickup Location">
-
-<input id="delivery" placeholder="Delivery Location">
-
-<button onclick="sendOrder()">Order on WhatsApp</button>
-
-</div>
-
-<div class="footer">
-
-<h2>Quick Delivery • Low Cost • Trusted</h2>
-
-<p>Call / WhatsApp</p>
-
-<h1>88061 43563</h1>
-
-</div>
-
 </body>
 </html>
-```
